@@ -1,0 +1,234 @@
+@font-face {
+	font-family: 'FASolid';
+	font-weight: normal;
+	font-style: normal;
+	src: url('../font/fa-solid-900.eot');
+	src: url('../font/fa-solid-900.eot') format('embedded-opentype'), url('../font/fa-solid-900.woff') format('woff'), url('../font/fa-solid-900.ttf') format('truetype'), url('../fonts/FASolid/FASolid.svg#FASolid') format('svg');
+}
+
+/* Link settings */
+ul {
+	list-style: none;
+}
+
+.container {
+	display: flex;
+	justify-content: space-around;
+}
+
+/* ---------------- MENU ---------------- */
+/* Set menu as overlay */
+.menu { 
+	height: 100%;
+	width: 20%;
+    position: fixed; /* Stay in place */
+    z-index: 999; /* Sit on top */
+    left: -20%;
+    top: 0;
+	overflow-x: hidden; /* Disable horizontal scroll */
+	overflow-y: hidden; /* Disable vertical scroll */
+	transition: 0.6s; /* transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+	background: #ffffff;
+}
+
+@media only screen and (max-width: 960px) {
+    .menu {
+		width: 30%;
+		left: -30%;
+    }
+}
+.box {
+    display:block;
+    width:200px;
+    height:100px;
+	background-color:rgb(250, 19, 19);
+}
+#pop {
+	padding:0px 0px;
+}
+#example {
+    position:relative;
+}
+@media only screen and (max-width: 576px) {
+    .menu {
+		width: 80%;
+		left: -80%;
+    }
+}
+
+/* A border within the menu to align contents using flexbox */
+.menu__border {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	height: 100%;
+	width: 100%;
+}
+
+.tab-content, .menu__summary, .menu__content{
+	width: 100%;
+}
+
+/* ------------- */
+/* The summary-box bit in the menu */
+.menu__summary {
+	padding: 20px;
+}
+
+/* The cover image in the summary-box */
+.menu__summary img {
+	border-color: black;
+	width: 70px;
+	height: 120px;
+}
+
+/* The text in the summary-box  */
+.menu__summary .summary{
+	margin-top: 15px;
+}
+
+/* Paragraphs have set margins. Reset */
+.menu__summary p {
+	margin: 0px;
+}
+
+/* Position the close button (top right corner) */
+.menu .closebtn {
+	text-decoration: none;
+	transition: 0.3s; /* Transition effects on hover (color) */
+	position: absolute;
+	z-index: 2;
+    top: 20px;
+    right: 45px;
+	font-size: 16px;
+	color: #000;
+}
+
+/* When you mouse over the close button, change color */
+.menu .closebtn:hover{
+	color: #777;
+}
+
+/* ------------- */
+/* Alignment of menu content (the tabs) */
+.menu__content {
+    position: relative;
+	text-align: center; /* Centered text/links */
+}
+
+/* Tabs inside menu */
+.menu__content a {
+    text-decoration: none;
+    font-size: 16px;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+	color: #000;
+}
+
+/* When you mouse over the tabs, change their color */
+.menu__content a:hover, .menu__content a:focus {
+	text-decoration: underline;
+}
+
+/* The Tabs Themselves */
+.menu__content .nav-tabs {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+}
+
+
+/* ------------- */
+/* Content of Tabs */
+.tab-content {
+	flex: 1 1 auto;
+	overflow: auto;
+}
+
+.tab-content .tab-pane {
+	padding: 10px;
+}
+
+
+/* ---------------- END MENU ---------------- */
+
+/* ---------------- SIDE BAR ---------------- */
+/* Set sidebar as overlay */
+.sidebar { 
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+    position: fixed; /* Stay in place */
+	left: 0;
+	overflow-x: hidden; /* Disable horizontal scroll */
+}
+
+/* Alignment of menu content */
+.sidebar__content {
+	position: relative;
+	z-index: 1;
+	text-align: center; /* Centered text/links */
+	align-self: center;
+}
+
+.sidebar__content ul {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Space out sidebar icons */
+.sidebar__content li {
+	margin: 12px 12px;
+}
+
+.sidebar__content a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #000;
+	transition-property: color;
+	transition-duration:  0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the sidebar links, change their color */
+.sidebar__content a:hover, .sidebar__content a:focus {
+    color: #777;
+}
+
+/* On small screen, change position to Top */
+@media only screen and (max-width: 576px) {
+    .sidebar {
+		width: 100%;
+		height: 80px;
+		left: 0;
+		top: 0;
+		box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2);
+	}
+	
+	.sidebar__content ul {
+		flex-direction: row;
+	}
+}
+/* ---------------- END SIDE BAR ---------------- */
+
+/* ---------------- MAIN ---------------- */
+.main {
+	margin: 50px;
+	z-index: -1;
+}
+
+.dialogIsOpen .main {
+	filter: grayscale(50%);
+	/* Blur and de-color */
+	-webkit-filter: grayscale(50%);
+  
+  }
+
+
+@media only screen and (max-width: 576px) {
+    .main {
+		margin-top: 100px;
+	}
+}
+
+/* ---------------- END MAIN ---------------- */
